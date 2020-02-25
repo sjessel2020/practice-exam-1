@@ -17,7 +17,18 @@ const string NOUN_FILE = "nouns.txt";
 
 // main function
 int main() {
+  int adj_max = getLineCount(ADJ_FILE);
+
+  int noun_max = getLineCount(NOUN_FILE);
+
+  string adj = getAdjective(adj_max);
  
+  string noun = getNoun(noun_max);
+ 
+  cout << adj + "_" + noun << endl;
+ 
+  //concisely: 
+  // cout << getAdjective(getLineCount(ADJ_FILE)) + "_" + getNoun(getLineCount(NOUN_FILE)) << endl;
 
 return 0;}
 
@@ -62,5 +73,7 @@ string getWord(int max, string filename){
 
   return word;
 }
+
+
 
 
