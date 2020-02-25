@@ -1,0 +1,66 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int getlineCount(string);
+string getWord(int, string);//function that selects random words from a file
+string getAdjective(int);
+//function that selects words from the files that contains adjectives 
+string getNoun(int);
+//function that selects word from a noun file
+
+const string ADJ_FILE = "adjectives.txt";
+const string NOUN_FILE = "nouns.txt";
+
+// main function
+int main() {
+ 
+
+return 0;}
+
+
+
+
+//counts the number of lines in the file 
+int getLineCount(string filename)
+{
+ifstream in;
+in.open(filename);
+
+string line;
+int line_count = 0;
+
+while(getline(in,line)){
+  line_count++;}
+
+  in.close();
+  return line_count;
+}
+
+
+string getAdjective(int max){
+  return getAdjective(max, ADJ_FILE);
+}
+
+string getNoun(int max){
+  return getWord(max,NOUN_FILE);
+}
+
+string getWord(int max, string filename){
+  string word;
+  unsigned int s = time(0);
+  srand(s);
+  int r = (rand() % (max - min +1)) +min;
+
+  for(int i =0; i<r; i++){
+    in>> word;
+  }
+  in.close();
+
+  return word;
+}
+
+
